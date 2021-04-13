@@ -1,0 +1,37 @@
+.input_container{
+  margin: 10px 0 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  input, label{
+    text-align: center;
+    width: 80%;
+    margin-bottom: 5px;
+  }
+}
+
+#weight::before{
+  content: "0.5";
+  margin-left: -30px;
+ }
+#weight::after{
+  content: "1";
+  margin-right: -20px;
+}
+
+#rigidity::before{
+  content: "5";
+  margin-left: -20px;
+}
+#rigidity::after{
+  content: "9";
+  margin-right: -20px;
+}
+#delta::before{
+  content: "0";
+  margin-left: -20px;
+}
+#delta::after{
+  content: "20";
+  margin-right: -30px;
+}
