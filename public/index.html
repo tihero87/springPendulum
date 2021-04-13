@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spring Pendulum</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div id="app">
+        <div class="wrap">
+            <div class="visual">
+                <svg width="400" height="400">
+                    <line x1="100" y1="30" x2="300" y2="30" stroke="grey" stroke-width="2" />
+                    <line x1="100" y1="30" x2="110" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="120" y1="30" x2="130" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="140" y1="30" x2="150" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="160" y1="30" x2="170" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="180" y1="30" x2="190" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="200" y1="30" x2="210" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="220" y1="30" x2="230" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="240" y1="30" x2="250" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="260" y1="30" x2="270" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="280" y1="30" x2="290" y2="10" stroke="grey" stroke-width="2" />
+                    <line x1="300" y1="30" x2="310" y2="10" stroke="grey" stroke-width="2" />
+                    <polyline id="polyline"
+                      points="200,30 200,80 160,100 240,120 160,140 240,160 160,180 240,200 160,220 240,240 200,250 200,270"
+                      fill="none" stroke="grey" stroke-width="3"/>
+                    <circle id="circle" r="18.42" cx="200" cy="288.42" fill="brown" stroke="grey"/>
+                </svg>
+                <button id="btn_play">Play</button>
+            </div>
+
+            <div class="options">
+                <div class="input_container">
+                    <label for="weight">масса груза (кг)</label>
+                    <input id="weight" type="range" min="0.5" max="1" step="0.1" value="0.5" list="weight_list">
+                    <datalist id="weight_list">
+                        <option value="0.5" label="0.5">
+                        <option value="0.6" label="0.6">
+                        <option value="0.7" label="0.7">
+                        <option value="0.8" label="0.8">
+                        <option value="0.9" label="0.9">
+                        <option value="1" label="1">
+                    </datalist>
+                </div>
+                <div class="input_container">
+                    <label for="rigidity">жесткость пружины (Н/м)</label>
+                    <input id="rigidity" type="range" min="5" max="9" step="1" value="5" list="rigidity_list">
+                    <datalist id="rigidity_list">
+                        <option value="5" label="5">
+                        <option value="6" label="6">
+                        <option value="7" label="7">
+                        <option value="8" label="8">
+                        <option value="9" label="9">
+                    </datalist>
+                </div>
+
+                <div class="input_container">
+                    <label for="delta">отклонение от равновения (вниз)</label>
+                    <input id="delta" type="range" min="0" max="20" step="2" value="10" list="delta_list">
+                    <datalist id="delta_list">
+                        <option value="0" label="0">
+                        <option value="2" label="2">
+                        <option value="4" label="4">
+                        <option value="6" label="6">
+                        <option value="8" label="8">
+                        <option value="10" label="10">
+                        <option value="12" label="12">
+                        <option value="14" label="14">
+                        <option value="16" label="16">
+                        <option value="18" label="18">
+                        <option value="20" label="20">
+                    </datalist>
+                </div>
+
+            </div>
+
+            <div class="characteristic">
+                <section>
+                    <label>циклическая частота собственных колебаний:</label>
+                    <div class="characteristic_card">
+                        w<sub>0</sub>: <span id="w0"></span>
+                    </div>
+                </section>
+
+                <section>
+                    <label>время колебаний:</label>
+                    <div class="characteristic_card">
+                        <span id="time">. . .</span>
+                    </div>
+                </section>
+
+                <section>
+                    <label>количество полных колебаний:</label>
+                    <div class="characteristic_card">
+                        <span id="count">. . .</span>
+                    </div>
+                </section>
+
+                <section>
+                    <label>координата x:</label>
+                    <div class="characteristic_card">
+                        <span id="x">. . .</span>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
